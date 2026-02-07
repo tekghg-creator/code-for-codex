@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Face Changer – Echtzeit</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Face Changer – Echtzeit</h1>
+      <p class="subtitle">Weiche, feminine Filter-Optik für dein Live-Video (lokal im Browser).</p>
+    </header>
+
+    <section class="viewer">
+      <video id="video" autoplay playsinline muted></video>
+      <canvas id="output"></canvas>
+      <div class="badge" id="status">Starte Kamera…</div>
+    </section>
+
+    <section class="controls">
+      <div class="control">
+        <label for="strength">Filterstärke</label>
+        <input type="range" id="strength" min="0" max="100" value="65" />
+      </div>
+      <div class="control">
+        <label for="softness">Weichzeichnung</label>
+        <input type="range" id="softness" min="0" max="10" value="4" />
+      </div>
+      <div class="control">
+        <label for="blush">Rosa-Ton</label>
+        <input type="range" id="blush" min="0" max="100" value="55" />
+      </div>
+      <div class="control">
+        <label for="lips">Lippenfarbe</label>
+        <input type="range" id="lips" min="0" max="100" value="45" />
+      </div>
+      <div class="control">
+        <label class="toggle">
+          <input type="checkbox" id="mirror" checked />
+          Spiegeln
+        </label>
+      </div>
+    </section>
+
+    <section class="notes">
+      <h2>Hinweise</h2>
+      <ul>
+        <li>Die Verarbeitung läuft komplett lokal im Browser.</li>
+        <li>Für bestes Ergebnis nutze eine gleichmäßig ausgeleuchtete Umgebung.</li>
+        <li>Wenn dein Browser die FaceDetector-API nicht unterstützt, wird ein globaler Filter genutzt.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
